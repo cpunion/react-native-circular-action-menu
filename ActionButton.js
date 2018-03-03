@@ -200,9 +200,7 @@ export default class ActionButton extends Component {
               {...button.props}
               onPress={() => {
                   if (this.props.autoInactive) {
-                    this.timeout = setTimeout(() => {
-                      this.reset();
-                    }, 200);
+                    this.reset();
                   }
                   button.props.onPress();
                 }}
