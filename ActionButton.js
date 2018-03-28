@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
 import ActionButtonItem from './ActionButtonItem';
 
 const alignMap = {
@@ -242,12 +243,11 @@ export default class ActionButton extends Component {
         {backdrop}
 
         {this.props.children && this.renderActions()}
-        <View
+        <SafeAreaView forceInset={{ bottom: 'always', top: 'never' }}
           pointerEvents="box-none"
-          style={this.getActionContainerStyle()}
-        >
+          style={this.getActionContainerStyle()}>
           {this.renderButton()}
-        </View>
+        </SafeAreaView>
       </View>
     );
   }
